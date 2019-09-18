@@ -4,10 +4,11 @@
     <div class="thread">
       <div>
         <p>
-          <a :href="`/thread/${thread['.key']}`">{{thread.title}}</a>
+          <!-- <router-link :to="`/thread/${thread['.key']}`">{{thread.title}}</router-link> -->
+          <router-link :to="{name: 'ThreadShow', params: {id: thread['.key']}}">{{thread.title}}</router-link>
         </p>
         <p class="text-faded text-xsmall">
-          By <a href="#">{{user.name}}</a>, {{thread.publishedAt}}.
+          By <router-link to="#">{{user.name}}</router-link>, {{thread.publishedAt}}.
         </p>
       </div>
 
